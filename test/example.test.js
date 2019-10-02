@@ -41,3 +41,28 @@ test('should return 1 when number is 18 (same as the random number)', function(a
     // Make assertions about what is expected valid result
     assert.equal(numberCorrect, 1);
 });
+
+test('should return false when number is less than 0', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const number = -2;
+    const randomNumber = 18;
+    //Act 
+    // Call the function you're testing and set the result to a const
+    let numberCorrect = numberTest(number, randomNumber);
+    //Assert
+    // Make assertions about what is expected valid result
+    assert.equal(numberCorrect, false);
+});
+test('should return false when number is greater than 20', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const number = 21;
+    const randomNumber = 18;
+    //Act 
+    // Call the function you're testing and set the result to a const
+    let numberCorrect = numberTest(number, randomNumber);
+    //Assert
+    // Make assertions about what is expected valid result
+    assert.equal(numberCorrect, false);
+});

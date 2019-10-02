@@ -12,6 +12,7 @@ submitButton.addEventListener('click', function() {
     
     let number = document.getElementById('number').value;
     let filteredNumber = parseInt(number);
+    
     const result = numberTest(filteredNumber, realNumber);
     
     if (result === -1) {
@@ -20,6 +21,8 @@ submitButton.addEventListener('click', function() {
         tooHigh();
     } else if (result === 1) {
         won();
+    } else if (result === false) {
+        invalidNumber();
     }   
     if (trys === 0) {
         lost();
@@ -50,5 +53,6 @@ function trysLeftDisplay() {
         guessesLeft.textContent = `You have ${trys} try left`;
     }
 }
-
-console.log(realNumber);
+function invalidNumber() {
+    userMessage.textContent = 'That is an invalid number';
+}
