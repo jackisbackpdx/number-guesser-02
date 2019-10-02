@@ -1,27 +1,54 @@
-let submit = document.getElementById('submit');
-let message = document.getElementById('usr-msg');
-const realNumber = (Math.floor(Math.random() * (13)));
+import numberTest from './guess-number.js';
+
+let submitButton = document.getElementById('submit');
+let userMessage = document.getElementById('usr-msg');
+const guessesLeft = document.getElementById('guesses-left');
 let trys = 3;
 
-console.log(realNumber);
+const realNumber = (Math.floor(Math.random() * (13)));
 
-submit.addEventListener('click', function() {
+
+submitButton.addEventListener('click', function() {
+    
     let number = document.getElementById('number').value;
     let filteredNumber = parseInt(number);
-    if (filteredNumber > realNumber) {
-        message.textContent = 'You guessed too high';
-        trys--;
-        console.log(trys);
-    } else if (filteredNumber < realNumber) {
-        message.textContent = 'You guessed too low';
-        trys--;
-        console.log(trys);
-    } else if (filteredNumber === realNumber) {
-        message.textContent = 'You won!';
-        console.log(trys);
-    }
+    const result = numberTest(filteredNumber, realNumber);
+    
+    if (result === -1) {
+        tooLow();
+    } else if (result === 0) {
+        tooHigh();
+    } else if (result === 1) {
+        won();
+    }   
     if (trys === 0) {
-        message.textContent = 'You lost :<';
-        submit.disabled = true;
+        lost();
     }
 });
+
+function tooLow() {
+    userMessage.textContent = 'You guessed too low';
+    trys--;
+    trysLeftDisplay();
+}
+function tooHigh() {
+    userMessage.textContent = 'You guessed too high';
+    trys--;
+    trysLeftDisplay();
+}
+function won() {
+    userMessage.textContent = 'You won!';
+    submitButton.disabled = true;
+}
+function lost() {
+    userMessage.textContent = 'You lost :(';
+    submitButton.disabled = true;
+}
+function trysLeftDisplay() {
+    guessesLeft.textContent = `You have ${trys} trys left`;
+    if (trys === 1) {
+        guessesLeft.textContent = `You have ${trys} try left`;
+    }
+}
+
+console.log(realNumber);

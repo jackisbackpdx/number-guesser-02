@@ -3,15 +3,55 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    background: orangered;
 }
-div {
+html {
+    height: 100%;
+}
+#container {
     display: flex;
     flex-direction: column;
-    height: 200px;
     justify-content: space-around;
+    align-items: center;
     background-color: blue;
     text-align: center;
+    height: 300px;
+    width: 300px;
+    box-shadow: 5px 0px 20px blue, -5px 0px 20px
+     blue, 0px 5px 20px blue, 0px -5px 20px blue;
+     border-radius: 20px;
 }
 #number {
+    text-align: center;
+    width: 50%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+}
+p {
+    font-size: 1.3rem;
+    height: 2rem;
+    background-color: purple;
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+button {
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background: white;
+    outline: none;
+}
+#opening {
+    position: absolute;
+    top: 0;
     text-align: center;
 }
