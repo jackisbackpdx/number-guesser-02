@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-around;
+    background-color: blue;
+    text-align: center;
+}
+#number {
+    text-align: center;
+}
