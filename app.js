@@ -9,6 +9,9 @@ const realNumber = (Math.floor(Math.random() * (13)));
 
 
 submitButton.addEventListener('click', function() {
+
+    const display = document.getElementById('all-text');
+    display.style.visibility = 'initial';
     
     let number = document.getElementById('number').value;
     let filteredNumber = parseInt(number);

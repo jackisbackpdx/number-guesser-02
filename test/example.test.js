@@ -63,6 +63,7 @@ test('should return false when number is greater than 20', function(assert) {
     // Call the function you're testing and set the result to a const
     let numberCorrect = numberTest(number, randomNumber);
     //Assert
+    
     // Make assertions about what is expected valid result
     assert.equal(numberCorrect, false);
 });

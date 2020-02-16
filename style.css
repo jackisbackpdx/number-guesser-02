@@ -59,3 +59,12 @@ button:disabled {
     top: 0;
     text-align: center;
 }
+#guesses-left {
+    padding: 5px;
+}
+#usr-msg {
+    padding: 5px;
+}
+#all-text {
+    visibility: hidden;
+}
